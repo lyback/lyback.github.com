@@ -11,14 +11,14 @@ tags:
 
 > [原地址](https://unity3d.com/cn/unity/whats-new/unity-2018.1.0?_ga=2.28675386.782122071.1527747503-1549264406.1483410723)
 
-## **发行说明**
+# **发行说明**
 
-# 系统要求变化
+## 系统要求变化
 
 * Windows独立平台：不再支持Windows XP，仅支持Windows Vista以上的系统
 * 弃用MonoDevelop，推荐使用VisualStudio来写C#代码在macOS和Windows平台
 
-# 包体
+## 包体
 
 * Services: Updated Unity Ads (com.unity.ads) to v2.0.7.
 
@@ -34,17 +34,44 @@ tags:
   - Note that versions 1.8.X of the package are verified for use with 2018.1. Versions 1.9.x (or newer) may be available for download via the Package   Manager UI itself, but are not officially verified for 2018.1.
   - See entry in Features section for further details.
 
-# 特性
+## 特性
 
-* 2D:[试验]添加试验的API来支持Sprite动画
-* 2D:[试验]添加可以自定义功能的Sprite Editor Window
-* Android:新增一个接口，IPostGenerateGradleAndroidProject，包含一个在生成Android Gradle project之后，构建之前的回调
-* Android:添加一个新的设置，Sustained Performance Mode,which sets a predictable, consistent level of device performance over longer periods of time without thermal throttling.
-* Android:添加ARM64（或叫AArch64）支持（试验）
-* Animation:添加 **Position Constraint**，**Rotation Constraint** 和 **Scale Constraint** 组件
-* Animation:添加新的**Parent Constraint**组件
-* Animation:添加新的**Aim Constraint**组件
-* Animation:AnimationCurve添加加权tangent支持
+* 2D: [试验]添加试验的API来支持Sprite动画
+* 2D: [试验]添加可以自定义功能的Sprite Editor Window
+* Android: 新增一个接口，IPostGenerateGradleAndroidProject，包含一个在生成Android Gradle project之后，构建之前的回调
+* Android: 添加一个新的设置，Sustained Performance Mode,which sets a predictable, consistent level of device performance over longer periods of time without thermal throttling.
+* Android: 添加ARM64（或叫AArch64）支持（试验）
+* Animation: 添加 **Position Constraint**，**Rotation Constraint** 和 **Scale Constraint** 组件
+* Animation: 添加新的**Parent Constraint**组件
+* Animation: 添加新的**Aim Constraint**组件
+* Animation: AnimationCurve添加加权tangent支持
 * Animation: Constraint Activation
 * Animation: Constraint Creation
 * Asset Import: 支持从FBX导入Aim constraints
+* Asset Import: 支持从FBX导入Parent Constraints
+* Asset Import: 支持从FBX导入Point, Orient and Scale constraints
+* Asset Import: 添加**OnPreprocessAsset**回调在**AssetPostprocessor**中
+* Asset Import: [试验] 添加试验的API来从Importer Settings生成Textures/Sprites 
+* Audio: 添加Google's Resonance Audio插件
+* Build Pipeline: 添加可以用EditorBuildSettings通过名字存储或恢复GameObject引用的能力
+* Build Pipeline: 添加新的API来修改平台图标。[PlayerSettings.SetPlatformIcons](https://docs.unity3d.com/2018.1/Documentation/ScriptReference/PlayerSettings.SetPlatformIcons.html?_ga=2.5891637.782122071.1527747503-1549264406.1483410723)
+* Build Pipeline: 添加新的 BuildReport API。Building Players和AssetBundles可以返回BuildReport让你可以查看构建信息和输出信息
+* Cache Server: 添加 -CacheServerIPAddress 的命令行参数来用于编辑器启动时连接特定的Cache Server
+* Editor: Added a Clear on play button to the Unity Profiler window.
+* Editor: Added a preset class that allows you to save serialized information about a GameObject to a .preset Asset, and apply it later to the same GameObject type.
+* Editor: Added new ObjectFactory API that allows you to create a GameObject using default values. See Scripting API and documentation on **Presets** for more details.
+* Editor: Added Templates for 3D, 2D, 3D with Extras (Preview), Lightweight (Preview), Lightweight VR (Preview), and High Definition (Preview) to streamline the new user experience with Scriptable Render Pipeline features, as well as to define better starting points for graphical, player, and lighting settings.
+* Editor: Unity now compiles Assembly Definition File (asmdef) assemblies on startup, before any other scripts (such as Assembly-CSharp.dll), and does not stop compilation on the first compile error. Uniy loads all asmdef assemblies that succesfully compile and have all their references compiled, then compiles the remaining scripts (Assembly-CSharp.dll and friends). This ensures that Unity packages are always built and and loaded, regardless of other compile errors in the Project.
+* Editor: When running PlayMode and EditMode tests in batch mode, you can now specify which scripting back-end to use, via a Test Settings file.
+* GI: Progressive Lightmapper is now out of preview!
+* GI: [Experimental] Added experimental API for baking sky occlusion in Progressive Lightmapper. The sky occlusion value for a given input position defines what fraction of the sky is visible for that point. It takes into account any static GameObjects. The sky occlusion allows you to apply the correct amount of sky lighting to GameObjects that are otherwise hard to lightmap, such as trees and foliage.
+* GI: [Experimental] Added new experimental C# interface to pass light information to the GI baking back-ends.
+* Graphics: Added dynamic resolution support for Playstation 4.
+* Graphics: GPU Instancing now supports GI.
+- Unity can now automatically batch GameObjects affected by Light Probes, Occlusion Probes (in Shadowmask mode) or lightmaps, with Foward and Deferred pipeline.
+- Unity can send Light Probe and Occlusion Probe data to Graphics.DrawMeshInstanced using the LightProbeUsage.CustomProvided mode.
+- Added New APIs to calculate probe data and copy it to MaterialPropertyBlock: LightProbes.CalculateInterpolatedLightAndOcclusionProbes, MaterialPropertyBlock.CopySHCoefficientArrayFrom, MaterialPropertyBlock.CopyProbeOcclusionArrayFrom.
+* Graphics: Metal: Added support for tessellation using DX11 convention through hull/domain shader stages.
+* Graphics: [Preview] High Definition (HD) Render Pipeline (in preview for 2018.1): a modern renderer built on the Scriptable Render Pipeline (SRP).
+- See documentation here:[High Definition Render Pipeline overview](https://github.com/Unity-Technologies/ScriptableRenderPipeline/wiki/High-Definition-Render-Pipeline-overview)
+- Blogpost:[The High Definition Render Pipeline: Focused on visual quality](https://blogs.unity3d.com/cn/2018/03/16/the-high-definition-render-pipeline-focused-on-visual-quality/?_ga=2.32131640.782122071.1527747503-1549264406.1483410723)
