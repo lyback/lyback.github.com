@@ -1,0 +1,50 @@
+---
+layout:     post
+title:      "Whats-new-Unity2018"
+subtitle:   "来看看Unity2018有哪些新特性"
+date:       2018-05-31 14:18:00
+author:     "ly"
+header-img: "img/post-bg-Unity.jpg"
+tags:
+    - 翻译
+---
+
+> [原地址](https://unity3d.com/cn/unity/whats-new/unity-2018.1.0?_ga=2.28675386.782122071.1527747503-1549264406.1483410723)
+
+## **发行说明**
+
+# 系统要求变化
+
+* Windows独立平台：不再支持Windows XP，仅支持Windows Vista以上的系统
+* 弃用MonoDevelop，推荐使用VisualStudio来写C#代码在macOS和Windows平台
+
+# 包体
+
+* Services: Updated Unity Ads (com.unity.ads) to v2.0.7.
+
+  - Note that this is not to be confused with the Unity Ads SDK version, which is v2.1.1.
+    Services: Updated Analytics (com.unity.analytics) to v2.0.16
+
+* Services: Updated IAP (com.unity.purchasing) to v2.0.1
+
+* Services: Updated Standard Events (com.unity.standardevents) to v1.0.13
+
+* Editor: Added Package Manager UI (com.unity.package-manager-ui) at v1.8.8
+
+  - Note that versions 1.8.X of the package are verified for use with 2018.1. Versions 1.9.x (or newer) may be available for download via the Package   Manager UI itself, but are not officially verified for 2018.1.
+  - See entry in Features section for further details.
+
+# 特性
+
+* 2D:[试验]添加试验的API来支持Sprite动画
+* 2D:[试验]添加可以自定义功能的Sprite Editor Window
+* Android:新增一个接口，IPostGenerateGradleAndroidProject，包含一个在生成Android Gradle project之后，构建之前的回调
+* Android:添加一个新的设置，Sustained Performance Mode,which sets a predictable, consistent level of device performance over longer periods of time without thermal throttling.
+* Android:添加ARM64（或叫AArch64）支持（试验）
+* Animation:添加 **Position Constraint**，**Rotation Constraint** 和 **Scale Constraint** 组件
+* Animation:添加新的**Parent Constraint**组件
+* Animation:添加新的**Aim Constraint**组件
+* Animation:AnimationCurve添加加权tangent支持
+* Animation: Constraint Activation
+* Animation: Constraint Creation
+* Asset Import: 支持从FBX导入Aim constraints
