@@ -37,41 +37,197 @@ tags:
 ## 特性
 
 * 2D: [试验]添加试验的API来支持Sprite动画
+
 * 2D: [试验]添加可以自定义功能的Sprite Editor Window
+
 * Android: 新增一个接口，IPostGenerateGradleAndroidProject，包含一个在生成Android Gradle project之后，构建之前的回调
-* Android: 添加一个新的设置，Sustained Performance Mode,which sets a predictable, consistent level of device performance over longer periods of time without thermal throttling.
+
+* Android: 添加一个新的设置，Sustained Performance Mode,which sets a predictable, consistent level of device performance over longer periods of time 
+without thermal throttling.
+
 * Android: 添加ARM64（或叫AArch64）支持（试验）
+
 * Animation: 添加 **Position Constraint**，**Rotation Constraint** 和 **Scale Constraint** 组件
+
 * Animation: 添加新的**Parent Constraint**组件
+
 * Animation: 添加新的**Aim Constraint**组件
+
 * Animation: AnimationCurve添加加权tangent支持
+
 * Animation: Constraint Activation
+
 * Animation: Constraint Creation
+
 * Asset Import: 支持从FBX导入Aim constraints
+
 * Asset Import: 支持从FBX导入Parent Constraints
+
 * Asset Import: 支持从FBX导入Point, Orient and Scale constraints
-* Asset Import: 添加**OnPreprocessAsset**回调在**AssetPostprocessor**中
+
+* Asset Import: 添加**OnPreprocessAsset**回调在**AssetPostprocessor**
+
 * Asset Import: [试验] 添加试验的API来从Importer Settings生成Textures/Sprites 
+
 * Audio: 添加Google's Resonance Audio插件
+
 * Build Pipeline: 添加可以用EditorBuildSettings通过名字存储或恢复GameObject引用的能力
-* Build Pipeline: 添加新的API来修改平台图标。[PlayerSettings.SetPlatformIcons](https://docs.unity3d.com/2018.1/Documentation/ScriptReference/PlayerSettings.SetPlatformIcons.html?_ga=2.5891637.782122071.1527747503-1549264406.1483410723)
+
+* Build Pipeline: 添加新的API来修改平台图标。[PlayerSettings.SetPlatformIcons]
+(https://docs.unity3d.com/2018.1/Documentation/ScriptReference/PlayerSettings.SetPlatformIcons.html?_ga=2.5891637.782122071.1527747503-1549264406.1483410723)
+
 * Build Pipeline: 添加新的 BuildReport API。Building Players和AssetBundles可以返回BuildReport让你可以查看构建信息和输出信息
+
 * Cache Server: 添加 -CacheServerIPAddress 的命令行参数来用于编辑器启动时连接特定的Cache Server
+
 * Editor: Added a Clear on play button to the Unity Profiler window.
+
 * Editor: Added a preset class that allows you to save serialized information about a GameObject to a .preset Asset, and apply it later to the same GameObject type.
+
 * Editor: Added new ObjectFactory API that allows you to create a GameObject using default values. See Scripting API and documentation on **Presets** for more details.
+
 * Editor: Added Templates for 3D, 2D, 3D with Extras (Preview), Lightweight (Preview), Lightweight VR (Preview), and High Definition (Preview) to streamline the new user experience with Scriptable Render Pipeline features, as well as to define better starting points for graphical, player, and lighting settings.
+
 * Editor: Unity now compiles Assembly Definition File (asmdef) assemblies on startup, before any other scripts (such as Assembly-CSharp.dll), and does not stop compilation on the first compile error. Uniy loads all asmdef assemblies that succesfully compile and have all their references compiled, then compiles the remaining scripts (Assembly-CSharp.dll and friends). This ensures that Unity packages are always built and and loaded, regardless of other compile errors in the Project.
+
 * Editor: When running PlayMode and EditMode tests in batch mode, you can now specify which scripting back-end to use, via a Test Settings file.
+
 * GI: Progressive Lightmapper is now out of preview!
+
 * GI: [Experimental] Added experimental API for baking sky occlusion in Progressive Lightmapper. The sky occlusion value for a given input position defines what fraction of the sky is visible for that point. It takes into account any static GameObjects. The sky occlusion allows you to apply the correct amount of sky lighting to GameObjects that are otherwise hard to lightmap, such as trees and foliage.
+
 * GI: [Experimental] Added new experimental C# interface to pass light information to the GI baking back-ends.
+
 * Graphics: Added dynamic resolution support for Playstation 4.
+
 * Graphics: GPU Instancing now supports GI.
 - Unity can now automatically batch GameObjects affected by Light Probes, Occlusion Probes (in Shadowmask mode) or lightmaps, with Foward and Deferred pipeline.
 - Unity can send Light Probe and Occlusion Probe data to Graphics.DrawMeshInstanced using the LightProbeUsage.CustomProvided mode.
 - Added New APIs to calculate probe data and copy it to MaterialPropertyBlock: LightProbes.CalculateInterpolatedLightAndOcclusionProbes, MaterialPropertyBlock.CopySHCoefficientArrayFrom, MaterialPropertyBlock.CopyProbeOcclusionArrayFrom.
+
 * Graphics: Metal: Added support for tessellation using DX11 convention through hull/domain shader stages.
+
 * Graphics: [Preview] High Definition (HD) Render Pipeline (in preview for 2018.1): a modern renderer built on the Scriptable Render Pipeline (SRP).
 - See documentation here:[High Definition Render Pipeline overview](https://github.com/Unity-Technologies/ScriptableRenderPipeline/wiki/High-Definition-Render-Pipeline-overview)
 - Blogpost:[The High Definition Render Pipeline: Focused on visual quality](https://blogs.unity3d.com/cn/2018/03/16/the-high-definition-render-pipeline-focused-on-visual-quality/?_ga=2.32131640.782122071.1527747503-1549264406.1483410723)
+* Launcher: The launcher now allows users to select one of the new project templates when creating new projects. Project templates available currently: 2D, 3D, 3D With Extras (Preview), Lightweight (Preview), Lightweight VR (Preview), and High Definition (Preview).
+
+* Multiplayer: You can now set Unity up to send you notifications about defined callbacks when there is something to read or the connection is ready to send information.
+
+* OSX: Added support for IL2CPP scripting backend for Mac Standalone player.
+
+* Package Manager: Added Package Manager User Interface to allow you to manage a Project's packages and discover new packages.
+
+* Particles: 为粒子系统的面片渲染添加GPU instancing支持
+
+* Particles: Added support for Orbital Velocity to the **Velocity over Lifetime** module.
+
+* Particles: All Particle Emitter shapes now support reading a Texture for masking and color tinting.
+
+* Physics: 2D Physics can now use all the cores on a device to run its simulation. See **Job Options (Experimental)** in 2D Physics Settings.
+
+* Player:新增一个实验API，**UnityEngine.Experimental.LowLevel.PlayerLoop** 它让你可以改变Unity生命周期里调用引擎系统，删除引擎系统或者插入一个新的入口到生命周期中。
+
+* Scripting: Added a new command line option, overrideMonoSearchPath, for desktop standalone players (OSX, Windows). This specifies an extra folder to search when Mono is loading assemblies. You can use this to re-use Assets but load different scripts.
+
+* Scripting Upgrade: Added support for Portable PDBs when running with the new scripting runtime.
+
+* Video: Added audio sample output API for the VideoPlayer, with support for access from C# or C++.
+
+* Video: Added support for reading videos from AssetBundles on Android.
+
+* Web: 为UnityWebRequest添加自定义证书验证支持. See **CertificateHandler** script documentation for more info.
+
+* Web: Added UploadHandlerFile for UnityWebRequest. This sends file contents as a request body, without loading the entire file to memory.
+
+* Windows: Added support for IL2CPP scripting backend for Windows Standalone player.
+
+* XR: Added 360-degree stereo image capturing, with support for converting rendered textures (cubemap) to stereo and mono equi-rectangular format for display in VR. Added new API: RenderTexture.ConvertToEquirect().
+
+* XR: Added a new option in the Windows MR Player Settings called Enable Depth Buffer Sharing. This allows the OS to better stabilize images without the need to manually set the focus plane.
+
+* XR: Added Standalone player support for stereoscopic 360-degree image capture for VR and non-VR projects on Win64/macOS platforms.
+- Use the 360 Stereo Capture UI checkbox in the VR Editor Settings panel to generate 360-degree capture shader variants when building a Standalone Player.
+- Added PlayerSettings.enable360StereoCapture binding.
+
+* XR: Added support for capturing stereoscopic 360-degree images for VR and non-VR projects. Added omni-directional stereo (ODS) support in the Shader pipeline for rendering to 360-degree stereo cubemap.
+- Added support for 360-degree stereo cubemap rendering in forward/deferred pipelines, directional/point light shadows, Skybox, MSAA, HDR and post-processing stack.
+- Added ODS rendering support for screenspace shadows via separate ODS world space passes and render textures, to avoid incorrect shadows per eye.
+- Added stereo RenderToCubemap API script support: camera.RenderToCubemap with stereo eye parameter.
+
+## 无法向后兼容的变化
+
+* Particles: 删除旧的Particle System脚本绑定
+
+* Tizen: Removed Tizen mobile support.
+
+## Changes
+
+* Android: Input field character now always appears at the end of text when opening keyboard.[(966477)](https://issuetracker.unity3d.com/issues/android-caret-is-always-at-the-beginning-of-existing-text-when-selecting-inputfield-with-line-type-set-to-multi-line?_ga=2.40610980.782122071.1527747503-1549264406.1483410723)
+
+* Android: Newly created projects now default to ARMv7 CPU architecture.
+
+* Android: Removed support for UnityPlayerProxyActivity.
+
+* Android: SDK Platform 26 now required to build for Android.
+
+* Android: Unity now creates a 2048-bit RSA key for signing the APK.
+
+* Android: Updated JDK requirements to JDK 8. This a requirement from the latest Android SDK.
+
+* Animation: Starting play mode while editing an Avatar configuration will no longer change the current scene. [(916586)](https://issuetracker.unity3d.com/issues/entering-play-mode-while-editing-avatar-throws-invalidoperationexception-error?_ga=2.2286134.782122071.1527747503-1549264406.1483410723)
+
+* Audio: Added error message when calling AudioSource.GetSpectrumData or AudioListener.GetSpectrumData with float arrays that are not a power of 2 or are outside the valid range between 64 and 8192 samples. [(827154)](https://issuetracker.unity3d.com/issues/audio-error-executing-m-drygroup-getspectrum-when-using-array-with-a-length-that-is-not-a-power-of-2?_ga=2.2286134.782122071.1527747503-1549264406.1483410723)
+
+* Editor: 添加 InspectorWindow.OnPostHeaderGUI 回调来在inspector window中画自定义 GUI 元素.
+
+* Editor: Compiling 'unsafe' C# code now requires the "Allow 'unsafe' code" option to be enabled in the player settings for predefined assemblies (Assembly-CSharp.dll, etc.) and in the inspector for Assembly Definition Files assemblies. Enabling this option will make Unity pass the /unsafe option to the C# compiler when compiling scripts.
+
+* Editor: Removed MonoDevelop 5.9.6 from macOS and Windows installers and deprecated support for it in Unity. Visual Studio for Mac is installed as the C# code editor on macOS and Visual Studio 2017 Community on Windows.
+
+* Editor: Removed the "Intensity" float field next to HDR texture fields in Material editors. Use the exposure controls in the Color Picker instead.
+
+* Editor: Substituted "intensity" float field in the Static Emissives tab of the Light Explorer for HDR color field; instead use the exposure controls in Color Picker.
+
+* Editor: The plug-in code that creates Textures used in rendering with IMGUI should now avoid specifying them in linear space (i.e. should set the linear parameter to false in the Texture2D constructor). Otherwise, GUI elements drawn with such textures might look washed out when the project is working in Linear space (Player Settings > Color space: Linear). (908904)
+
+* GI: s Support for hiding and disabling GI featurewhen making a render pipeline.
+
+* Graphics: Deprecated PlayerSettings.defaultIsFullscreen. Use PlayerSettings.fullscreenMode instead.
+
+* Graphics: GraphicsSettings shaders 不再启动时加载.
+
+* Graphics: Metal tessellation: Improved shader importing error reporting for when features are unsupported.
+
+* IL2CPP: Deprecated BuildOptions.IL2CPP, which never actually did anything. [(986326)](https://issuetracker.unity3d.com/issues/buildplayer-with-buildoptions-dot-il2cpp-does-not-output-an-il2cpp-build?_ga=2.31107641.782122071.1527747503-1549264406.1483410723)
+
+* iOS: Increased min target iOS version to 8.0.
+
+* iOS: iOS now links with Security framework by default. To remove it, set a pre-processor define DISABLE_WEBREQUEST_CERTIFICATE_CALLBACK and remove "Security" from the list of linked frameworks in Xcode.
+
+* iOS: ScreenOrientation.Unknown 弃用.
+
+* OSX: Metal is now the default graphics backend for Editor.
+
+* Package Manager: Unity Package Manager project sub-folder was moved from UnityPackageManager to Packages. This is to align the physical path with the logical path of packages. Notes:
+- Projects configured with a NuGet should change their configuration to point to another folder (default repository path for NuGet configuration is \packages). The risk of NuGet and Unity Package Manager sharing the Packages folder is minimal, but we suggest to separate them nonetheless to avoid any issues.
+- When opening a project created with a previous version, a migration flow will copy the content of the UnityPackageManager folder to the Packages folder. It is left to the project maintainer to erase the UnityPackageManager folder and update source control configuration.
+
+* Services: Replaced web-based Collab history window with improved RMGUI version.
+
+* Substance: Built-in support for Substance Designer materials is deprecated in Unity 2017.3, and will be removed in 2018.1. To continue using Substance Designer materials in Unity 2018.1, you will need to install a suitable third-party external importer from the Asset Store.
+
+* Universal Windows Platform: Build & Run now defaults to 64-bit player when running on local machine.
+
+* **重要**Web: AssetBundle-related parts of UnityWebRequest have been split into a new module, allowing UnityWebRequest to be used without pulling in AssetBundle module. API change: UnityWebRequest.GetAssetBundle -> UnityWebRequestAssetBundle.GetAssetBundle.
+
+* WebGL: Removed experimental label from WebAssembly linker target.
+
+* Windows: Removed support for Windows XP in Standalone Player builds. Windows Vista is the minimum supported OS now.
+
+* Windows: The Build Player location selection dialog now asks for a folder rather than a file name when building Windows standalone player. The BuildPipeline.BuildPlayer API is not affected by this change. [(995320)](https://issuetracker.unity3d.com/issues/windows-standalone-build-getting-more-stuff-dumped-into-root-build-folder?_ga=2.208962964.782122071.1527747503-1549264406.1483410723)
+
+* XR: Standalone UWP applications targeting Windows Mixed Reality now cause the OS to notify you if the Mixed Reality components are not installed or a headset is not connected, rather than silently falling back to non-VR desktop mode.
+
+## 改进
+
