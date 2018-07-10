@@ -4,7 +4,7 @@ title:      "反编译PyInstaller的可执行文件"
 subtitle:   "使用pyinstxtractor.py和uncompyle反编译python可执行文件"
 date:       2018-07-10 14:18:00
 author:     "ly"
-header-img: "img/post-bg-python"
+header-img: "img/post-bg-python.jpg"
 tags:
     - Python
 ---
