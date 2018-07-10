@@ -16,6 +16,7 @@ tags:
 * 安装uncompyle2：[Github地址](https://github.com/gstarnberger/uncompyle)
 
 * 下载pyinstxtractor.py：[下载地址](https://sourceforge.net/projects/pyinstallerextractor/)
+[Github地址](https://github.com/countercept/python-exe-unpacker)
 
 # **执行命令**
 
