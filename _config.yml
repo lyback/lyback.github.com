@@ -14,7 +14,7 @@ baseurl: "/lyback.github.com"         # for example, '/blog' if your blog hosted
 RSS: false
 #weibo_username:     huxpro
 #zhihu_username:     背影
-github_username:    lyback
+github_username: lyback
 #twitter_username:  huxpro
 #facebook_username:  huxpro
 
