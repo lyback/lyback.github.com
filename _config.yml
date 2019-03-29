@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: liuyu19911110@gmail.com
 description: ""
 keyword: ""
-url: "http://lyback.me"              # your host, for absolute URL
+url: "https://lyback.me"              # your host, for absolute URL
 baseurl: "/lyback.github.com"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
