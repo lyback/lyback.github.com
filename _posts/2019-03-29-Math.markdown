@@ -1,0 +1,28 @@
+---
+layout:     post
+title:      "计算机图形学-数学笔记"
+subtitle:   ""
+date:       2019-03-29 15:18:00
+author:     "ly"
+header-img: "img/post-bg-math.jpg"
+tags:
+    - 数学
+---
+
+# **向量**
+## 向量的概念
+![java-javascript](/img/in-post/post-math/向量概念.png)
+
+    1.向量的大小就是向量的长度（模）。响亮的长度非负。
+    2.向量的方向描述了向量的朝向。
+    3.向量是没有位置的。
+
+## 零向量与单位向量
+向量的长度即模，定义为：   
+       $\left|v\right|$ = $\sqrt{v_1^2+v_2^2+...+v_n^2}$   即  $\left|v\right|$ = $\sqrt{\sum_{i=1}^n v_i^2}$
+
+
+模等于0的向量为零向量，模等于1的向量为单位向量。零向量的方向是任意的。
+单位向量的计算方法:  
+    $v_n = \frac{v}{\left|v\right|}$ , $v\ne 0$
+

@@ -13,47 +13,47 @@ tags:
 
 # **UnityEngine.Rendering**
 
-## *AsyncGPUReadback(class)* && *AsyncGPUReadbackRequest(struct)*
+### *AsyncGPUReadback(class)* && *AsyncGPUReadbackRequest(struct)*
 允许异步读取GPU回传的资源
 [项目示例](https://github.com/keijiro/AsyncCaptureTest)
 
-## *CommandBuffer(class)*
+### *CommandBuffer(class)*
 要执行的图形命令列表 
 [官方教程](https://docs.unity3d.com/Manual/GraphicsCommandBuffers.html)
 
-## *GPUFence(struct)*
+### *GPUFence(struct)*
 用于管理异步计算队列和图形队列的任务之间的同步(目前只支持PS4平台)
 [SystemInfo.supportsGPUFence](https://docs.unity3d.com/ScriptReference/SystemInfo-supportsGPUFence.html)
 
-## *GraphicsSettings(class)*
+### *GraphicsSettings(class)*
 修改[GraphicsSettings](https://docs.unity3d.com/Manual/class-GraphicsSettings.html)的接口类
 
-## *PlatformKeywordSet(struct)* && *ShaderKeywordSet(struct)* && *ShaderKeyword(class)*
+### *PlatformKeywordSet(struct)* && *ShaderKeywordSet(struct)* && *ShaderKeyword(class)*
 Shader代码的宏定义设置接口
 
-## *ReflectionProbeBlendInfo(struct)*
+### *ReflectionProbeBlendInfo(struct)*
 包含混合探针所需的信息
 [ReflectionProbe](https://docs.unity3d.com/Manual/ReflectionProbes.html)
 
-## *RenderTargetBinding(struct)*(未理解)
+### *RenderTargetBinding(struct)*(未理解)
 描述具有一个或多个颜色缓冲区的渲染目标，深度/模板缓冲区以及渲染目标处于活动状态时应用的关联加载/存储操作。
 
-## *RenderTargetIdentifier(struct)*
+### *RenderTargetIdentifier(struct)*
 在CommandBuffer中标识RenderTexture
 
-## *SortingGroup(class:Behaviour)*
+### *SortingGroup(class:Behaviour)*
 挂在GameObject上使得子节点作为一个Group参加排序
 
-## *SphericalHarmonicsL2(struct)*
+### *SphericalHarmonicsL2(struct)*
 二阶球形谐波（3个频段，9个系数），球谐函数标识各方向上的函数或信号，并且通常用于有效的模拟平滑光照的计算。
 
-## *SplashScreen(class)*
+### *SplashScreen(class)*
  Unity开机图接口类
 
-## *GL(class)*
+### *GL(class)*
 低级图形库，立即执行，所以通常写在OnPostRender()或者OnRenderImage()函数中，不然会被摄像机渲染时清理掉。[GL API](https://docs.unity3d.com/ScriptReference/GL.html)
 
-## *Graphics(class)*
+### *Graphics(class)*
 Unity绘制方法的源生接口，这是优化网格绘制的便捷方法。  
 主要方法：
 |方法|功能|
@@ -67,3 +67,15 @@ Unity绘制方法的源生接口，这是优化网格绘制的便捷方法。
 |DrawTexture|Draw a texture in screen coordinates.
 |ExecuteCommandBuffer|Execute a command buffer.
 |ExecuteCommandBufferAsync|
+
+### *RenderBuffer(sturct)*
+RenderTexture的颜色或深度缓冲部分
+
+### *RenderTargetSetup(sturct)*
+完整描述了RenderTarget的设置
+
+### *RenderTexture(class)*
+渲染贴图，大家都很熟悉了，不用介绍了，直接上[链接](https://docs.unity3d.com/ScriptReference/RenderTexture.html)
+
+### *RenderTextureDescriptor(struct)*
+包含创建RenderTexture所需的所有信息
