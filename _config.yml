@@ -12,11 +12,11 @@ baseurl: "/lyback.github.com"         # for example, '/blog' if your blog hosted
 
 # SNS settings
 RSS: false
-#weibo_username:     huxpro
-#zhihu_username:     背影
-github_username: lyback
+weibo_username:     huxpro
+zhihu_username:     huxpro
+github_username:    huxpro
 #twitter_username:  huxpro
-#facebook_username:  huxpro
+facebook_username:  huxpro
 
 
 
