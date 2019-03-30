@@ -19,10 +19,10 @@ tags:
 
 ## 零向量与单位向量
 向量的长度即模，定义为：   
-$$\left|v\right|$ = $\sqrt{v_1^2+v_2^2+...+v_n^2}$   即  $\left|v\right|$ = $\sqrt{\sum_{i=1}^n v_i^2}$$  
+$\left|v\right|$ = $\sqrt{v_1^2+v_2^2+...+v_n^2}$   即  $\left|v\right|$ = $\sqrt{\sum_{i=1}^n v_i^2}$  
 模等于0的向量为零向量，模等于1的向量为单位向量。零向量的方向是任意的。
 单位向量的计算方法:  
-$$v_n = \frac{v}{\left|v\right|}$ , $v\ne 0$$
+$v_n = \frac{v}{\left|v\right|}$ , $v\ne 0$
 
 ## 三角形法则和平行四边形法则
 两个向量a和b，当将b的起点放在a的终点，连接a的起点和b的终点的向量成为向量a，b之和，记为：c = a + b,如下图所示：
@@ -33,4 +33,6 @@ $$v_n = \frac{v}{\left|v\right|}$ , $v\ne 0$$
 ## 向量夹角
 ![java-javascript](/img/in-post/post-math/向量/向量夹角.png)
 ## 向量点积
-向量点积也叫做向量的数量积
+向量点积也叫做向量的数量积，点积的结果是一个标量，其定义为：   
+$\vec{A}\cdot\vec{B} = \left|A\right|\left|B\right|\cos\theta$  
+其中$\theta$表示$\vec{A}$$和$$\vec{B}$之间的夹角。
