@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "计算机图形学-数学笔记"
-subtitle:   ""
+title:      "计算机图形学-数学笔记-向量"
+subtitle:   "向量"
 date:       2019-03-29 15:18:00
 author:     "ly"
 header-img: "img/home-bg.jpg"
