@@ -258,3 +258,54 @@ $$\begin{bmatrix}
                                 0 \\
                                 \end{bmatrix}$$
 因为矢量只有方向，没有位置，所以矢量的第四维为0，平移变换不会对矢量造成影响。PS:平移矩阵不是一个正交矩阵。
+### 缩放矩阵
+$$\begin{bmatrix}   
+k_x & 0 & 0 & 0 \\
+0 & k_y & 0 & 0 \\
+0 & 0 & k_z & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}\begin{bmatrix}   
+                x \\
+                y \\
+                z \\
+                0\\
+                \end{bmatrix} = \begin{bmatrix}   
+                                k_xx \\
+                                k_yy \\
+                                k_zz \\
+                                0 \\
+                                \end{bmatrix}$$
+### 旋转矩阵
+绕x轴：
+$$R_x(\theta) = \begin{bmatrix}   
+                1 & 0 & 0 & 0 \\
+                0 & \cos\theta & -\sin\theta & 0 \\
+                0 & \sin\theta & \cos\theta & 0 \\
+                0 & 0 & 0 & 1 \\
+                \end{bmatrix}$$
+绕y轴：
+$$R_x(\theta) = \begin{bmatrix}   
+                \cos\theta & 0 & \sin\theta & 0 \\
+                0 & 1 & 0 & 0 \\
+                -\sin\theta & 0 & \cos\theta & 0 \\
+                0 & 0 & 0 & 1 \\
+                \end{bmatrix}$$
+绕z轴：
+$$R_x(\theta) = \begin{bmatrix}   
+                \cos\theta & -\sin\theta & 0 & 0 \\
+                \sin\theta & \cos\theta & 0 & 0 \\
+                0 & 0 & 1 & 0 \\
+                0 & 0 & 0 & 1 \\
+                \end{bmatrix}$$
+旋转矩阵是正交矩阵
+### 复合变换
+我们可以吧平移、旋转和缩放组合起来，形成一个复杂的变换过程。  
+列坐标表示：
+$$P_{new} = M_{translation}M_{rotation}M_{scale}P_{old}$$
+变换顺序为从右往左，即先缩放变换，再旋转变换，最后平移变换。
+在大多数情况下，我们约定变换顺序是：**先缩放，在旋转，最后平移**。  
+为什么这么约定呢？假设先进行平移，在进行缩放，那之前的平移值也会被影响，从而导致效果和数值显示的不同。  
+我还需要注意小心旋转的变换顺序。在Unity中，旋转顺序是zxy。  
+旋转时还存在两种坐标系可以选择：
+![java-javascript](/img/in-post/post-math/矩阵/旋转坐标系的选择.png)
+Unity文档中说的选择顺序指的是在第一种情况下的顺序。
