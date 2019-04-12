@@ -281,3 +281,63 @@ void GenerateSimpleSquareSprite(VertexHelper vh, bool lPreserveAspect)
     vh.AddTriangle(2, 3, 0);
 }
 ```
+# **实现圆形裁剪**
+圆形裁剪和方形裁剪实现思路是一样的，差别在于顶点坐标和UV坐标的算法不同，圆形的坐标计算稍微复杂一些。下面直接上代码：
+```
+/// <summary>
+/// 绘制圆形图片
+/// </summary>
+void GenerateSimpleCircleSprite(VertexHelper vh, bool lPreserveAspect)
+{
+    Sprite activeSprite = this.overrideSprite;
+    Color32 color = this.color;
+    vh.Clear();
+    var uv = (activeSprite != null) ? Sprites.DataUtility.GetOuterUV(activeSprite) : Vector4.zero;
+    uv = SetShapeAnchors(uv);
+    uv = SetShapeScale(uv);
+    uv = SetShapeAnchorsOffset(uv);
+    if (m_ShapeAnchorsCalPadding)
+    {
+        uv = IncludePaddingUV(uv);
+    }
+
+    float tw = rectTransform.rect.width;
+    float th = rectTransform.rect.height;
+    float outerRadius = tw > th ? th / 2f : tw / 2f;
+    float uvCenterX = (uv.x + uv.z) * 0.5f;
+    float uvCenterY = (uv.y + uv.w) * 0.5f;
+    float uvScaleX = (uv.z - uv.x) / tw;
+    float uvScaleY = (uv.w - uv.y) / th;
+    float degreeDelta = 2 * Mathf.PI / circleShape_Segements;
+    int curSegements = (int)(circleShape_Segements * circleShape_FillPercent);
+
+    float curDegree = 0f;
+    int verticeCount = curSegements + 1;
+    //圆心
+    Rect r = GetPixelAdjustedRect();
+    Vector3 centerVertice = new Vector3(r.x + r.width / 2f, r.y + r.height / 2f);
+    vh.AddVert(centerVertice, color, new Vector2(uvCenterX, uvCenterY));
+    Vector3 curVertice = new Vector3();
+    for (int i = 1; i < verticeCount; i++)
+    {
+        float cosA = Mathf.Cos(curDegree);
+        float sinA = Mathf.Sin(curDegree);
+        float posX = cosA * outerRadius;
+        float posY = sinA * outerRadius;
+        curVertice.x = posX + centerVertice.x;
+        curVertice.y = posY + centerVertice.y;
+        vh.AddVert(curVertice, color, new Vector2(uvCenterX + posX * uvScaleX, uvCenterY + posY * uvScaleY));
+        curDegree += degreeDelta;
+    }
+    int triangleCount = curSegements * 3;
+    for (int i = 0, vIdx = 1; i < triangleCount - 3; i += 3, vIdx++)
+    {
+        vh.AddTriangle(vIdx, 0, vIdx + 1);
+    }
+    if (circleShape_FillPercent == 1)
+    {
+        //首尾顶点相连
+        vh.AddTriangle(verticeCount - 1, 0, 1);
+    }
+}
+```
